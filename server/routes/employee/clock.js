@@ -1,7 +1,7 @@
 'use strict'
 const router   = require('express').Router(),
       passport = require('passport'),
-      Employee = require('../../../models/employee.js')
+      User = require('../../models/user.js')
 
 // Clock in/out
 router.put('/', (req, res) => {
@@ -12,7 +12,7 @@ router.put('/', (req, res) => {
   //             I'm not sure how it's setup in the Employee schema, but this
   //             is functional.
 console.log(coordinates);
-  Employee.findOneAndUpdate( { username: req.body.username }, { clockStatus: req.body.clockStatus, $push: { 'locations': { 'coordinates': coordinates } } }, {upsert: true}, (err, user) => {
+  User.findOneAndUpdate( { username: req.body.username }, { clockStatus: req.body.clockStatus, $push: { 'locations': { 'coordinates': coordinates } } }, {upsert: true}, (err, user) => {
     if (err) {
       res.status(500).json({ message: 'Clock status NOT changed.', error: err })
     } else {
