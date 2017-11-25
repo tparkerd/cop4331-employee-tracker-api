@@ -5,7 +5,7 @@ const router     = require('express').Router(),
       del        = require('del'),
       multer     = require('multer'),
       fs         = require('fs'),
-      Employee   = require('../../../models/employee.js')
+      User       = require('../../models/user.js')
 
 
 let uploadService = (req, res) => {
@@ -70,7 +70,7 @@ let uploadService = (req, res) => {
       // Otherwise, upload was succesful, so update database url to reflect most recent photo
       // Update database
       let url = req.file.path.split(/\/(.+)/)[1]
-      Employee.findOneAndUpdate( { username: req.headers.username }, { picture: url }, (err, user) => {
+      User.findOneAndUpdate( { username: req.headers.username }, { picture: url }, (err, user) => {
         if (err) {
           res.status(500).json({ message: 'Picture location could not be updated.' })
         } else res.status(200).json({ message: 'File was uploaded successfully.', user: user})
