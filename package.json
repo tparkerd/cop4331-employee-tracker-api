@@ -25,16 +25,16 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "nodemon app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/gemini88mill/COP4331-Employee-Tracker.git"
+    "url": "git+ssh://git@github.com:tparkerd/cop4331-employee-tracker-api.git"
   },
-  "author": "Gabrielle Michaels",
+  "author": "Timothy Parker",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/gemini88mill/COP4331-Employee-Tracker/issues"
+    "url": "https://github.com/tparkerd/cop4331-employee-tracker-api/issues"
   },
-  "homepage": "https://github.com/gemini88mill/COP4331-Employee-Tracker#readme"
+  "homepage": "https://github.com/tparkerd/cop4331-employee-tracker-api#readme"
 }
